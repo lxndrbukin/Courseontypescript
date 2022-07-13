@@ -1,10 +1,7 @@
 import { User } from './models/User';
-import axios from 'axios';
 
-const user = new User({ name: 'Alex' });
+const user = new User({ name: 'Alex', age: 26 });
 
-user.events.on('click', () => {
-  console.log('Clicked');
-});
-
-user.events.trigger('click');
+user.on('change', () => {
+  console.log('User was changed');
+})
